@@ -1,0 +1,63 @@
+[
+  {
+    "ID_Carrera": 0,
+    "Nombre": "Sistemas",
+    "Duracion": 10
+  },
+  {
+    "ID_Carrera": 0,
+    "Nombre": "Gestion",
+    "Duracion": 10
+  },
+
+  {
+    "ID_Materia": 0,
+    "Nombre": "Bases de Datos",
+    "Grado": 5,
+    "ID_Carrera": 1
+  },
+  {
+    "ID_Materia": 0,
+    "Nombre": "Fundamentos Programacion",
+    "Grado": 1,
+    "ID_Carrera": 1
+  },
+  {
+    "ID_Materia": 0,
+    "Nombre": "Etica",
+    "Grado": 3,
+    "ID_Carrera": 2
+  },
+  {
+    "ID_Materia": 0,
+    "Nombre": "Administracion",
+    "Grado": 4,
+    "ID_Carrera": 2
+  },
+
+  {
+    "ID_Grupo": 0,
+    "Nombre": "A",
+    "Grado": 1
+  },
+  {
+    "ID_Grupo": 0,
+    "Nombre": "B",
+    "Grado": 1
+  },
+
+  {
+    "ID_Horario": 0,
+    "Hora": 7,
+    "Dia": 1,
+    "ID_Grupo": 1,
+    "ID_Materia": 1
+  },
+  {
+    "ID_Horario": 0,
+    "Hora": 8,
+    "Dia": 2,
+    "ID_Grupo": 0,
+    "ID_Materia":2
+  }
+]
