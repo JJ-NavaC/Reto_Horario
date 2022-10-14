@@ -194,13 +194,38 @@ const guardar_horario = async (req, res) => {
   });
 };
 
+const obtener_grupo = async (req, res) => {
+  const id = req.params.id;
+  await pool.getConnection().then(async (conn) => {
+    try {
+      const query = await conn.query("SELECT * FROM Grupo where ID_Grupo = ?", [
+        id,
+      ]);
+      console.log(query);
+
+      res.status(201).json({
+        ok: true,
+        mensaje: query,
+      });
+      conn.end();
+    } catch (error) {
+      res.status(500).json({
+        ok: false,
+        mensaje: "Algo salio mal :(",
+      });
+      conn.end();
+    }
+  });
+};
+
 module.exports = {
-    obtener_carreras,
-    obtener_grupos,
-    obtener_horarios,
-    obtener_materias,
-    guardar_carrera,
-    guardar_grupo,
-    guardar_horario,
-    guardar_materia
+  obtener_carreras,
+  obtener_grupos,
+  obtener_horarios,
+  obtener_materias,
+  guardar_carrera,
+  guardar_grupo,
+  guardar_horario,
+  guardar_materia,
+  obtener_grupo,
 };
