@@ -4,7 +4,6 @@ const obtener_carreras = async (req, res) => {
   await pool.getConnection().then(async (conn) => {
     try {
       const query = await conn.query("SELECT * FROM Carrera");
-      console.log(query);
 
       res.status(201).json({
         ok: true,
@@ -25,7 +24,6 @@ const obtener_grupos = async (req, res) => {
   await pool.getConnection().then(async (conn) => {
     try {
       const query = await conn.query("SELECT * FROM Grupo");
-      console.log(query);
 
       res.status(201).json({
         ok: true,
@@ -46,7 +44,6 @@ const obtener_horarios = async (req, res) => {
   await pool.getConnection().then(async (conn) => {
     try {
       const query = await conn.query("SELECT * FROM Horario");
-      console.log(query);
 
       res.status(201).json({
         ok: true,
@@ -67,7 +64,6 @@ const obtener_materias = async (req, res) => {
   await pool.getConnection().then(async (conn) => {
     try {
       const query = await conn.query("SELECT * FROM Materia");
-      console.log(query);
 
       res.status(201).json({
         ok: true,
@@ -95,7 +91,7 @@ const guardar_carrera = async (req, res) => {
         "INSERT INTO Carrera values (?,?,?)",
         data
       );
-      console.log(query);
+
       res.status(201).json({
         ok: true,
         mensaje: "Carrera registrada",
@@ -116,11 +112,11 @@ const guardar_grupo = async (req, res) => {
   const nombre = req.body.Nombre;
   const grado = req.body.Grado;
   const data = [id, nombre, grado];
-  console.log(data);
+
   await pool.getConnection().then(async (conn) => {
     try {
       const query = await conn.query("INSERT INTO Grupo values (?,?,?)", data);
-      console.log(query);
+
       res.status(201).json({
         ok: true,
         mensaje: "Grupo registrado",
@@ -148,7 +144,7 @@ const guardar_materia = async (req, res) => {
         "INSERT INTO Materia values (?,?,?,?)",
         data
       );
-      console.log(query);
+
       res.status(201).json({
         ok: true,
         mensaje: "Materia registrada",
@@ -171,14 +167,14 @@ const guardar_horario = async (req, res) => {
   const id_grupo = req.body.ID_Grupo;
   const id_materia = req.body.ID_Materia;
   const data = [id, hora, dia, id_grupo, id_materia];
-  console.log(data);
+
   await pool.getConnection().then(async (conn) => {
     try {
       const query = await conn.query(
         "INSERT INTO Horario values (?,?,?,?,?)",
         data
       );
-      console.log(query);
+
       res.status(201).json({
         ok: true,
         mensaje: "Horario registrado",
@@ -201,7 +197,6 @@ const obtener_grupo = async (req, res) => {
       const query = await conn.query("SELECT * FROM Grupo where ID_Grupo = ?", [
         id,
       ]);
-      console.log(query);
 
       res.status(201).json({
         ok: true,
