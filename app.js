@@ -9,5 +9,5 @@ app.use(express.json());
 app.use(require("./routes/route.js"));
 
 app.listen(port, () => {
-  console.log(`app listening at http://localhost:${port}`);
+    console.log(`app listening at http://localhost:${port}`);
 });
